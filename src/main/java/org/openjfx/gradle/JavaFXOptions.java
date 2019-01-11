@@ -31,6 +31,7 @@ package org.openjfx.gradle;
 
 import org.gradle.api.Project;
 
+import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -72,7 +73,7 @@ public class JavaFXOptions {
     }
 
     public void modules(String...moduleNames) {
-        setModules(List.of(moduleNames));
+        setModules(Arrays.asList(moduleNames));
     }
 
     private void updateJavaFXDependencies() {
@@ -86,10 +87,12 @@ public class JavaFXOptions {
     }
 
     private void clearJavaFXDependencies() {
+/*
         var implementationConfiguration = project.getConfigurations().findByName("implementation");
         if (implementationConfiguration != null) {
             implementationConfiguration.getDependencies()
                     .removeIf(dependency -> MAVEN_JAVAFX_ARTIFACT_GROUP_ID.equals(dependency.getGroup()));
         }
+*/
     }
 }

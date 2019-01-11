@@ -7,10 +7,10 @@ plugins {
 }
 
 group 'org.openjfx'
-version '0.0.6'
+version '0.0.7-SNAPSHOT'
 
-sourceCompatibility = 11
-targetCompatibility = 11
+sourceCompatibility = 8
+targetCompatibility = 8
 
 repositories {
     mavenCentral()
@@ -21,6 +21,7 @@ repositories {
 }
 
 dependencies {
+    compile 'com.gluonhq:omega:0.0.1-SNAPSHOT'
     implementation gradleApi()
 
     implementation 'com.google.gradle:osdetector-gradle-plugin:1.6.1'

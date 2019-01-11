@@ -32,7 +32,7 @@ package org.openjfx.gradle.tasks;
 import org.gradle.api.Project;
 import org.gradle.api.plugins.ApplicationPlugin;
 import org.gradle.api.tasks.JavaExec;
-import org.javamodularity.moduleplugin.tasks.ModuleOptions;
+// import org.javamodularity.moduleplugin.tasks.ModuleOptions;
 import org.openjfx.gradle.JavaFXModule;
 import org.openjfx.gradle.JavaFXOptions;
 import org.openjfx.gradle.JavaFXPlatform;
@@ -52,6 +52,7 @@ public class ExecTask {
                 JavaFXOptions javaFXOptions = project.getExtensions().getByType(JavaFXOptions.class);
                 JavaFXModule.validateModules(javaFXOptions.getModules());
 
+/*
                 var definedJavaFXModuleNames = new TreeSet<>(javaFXOptions.getModules());
                 if (!definedJavaFXModuleNames.isEmpty()) {
                     ModuleOptions moduleOptions = execTask.getExtensions().findByType(ModuleOptions.class);
@@ -74,6 +75,7 @@ public class ExecTask {
                         execTask.setJvmArgs(jvmArgs);
                     }
                 }
+*/
             }
         });
     }
