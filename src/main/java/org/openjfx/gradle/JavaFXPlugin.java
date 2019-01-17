@@ -34,6 +34,7 @@ import org.gradle.api.Plugin;
 import org.gradle.api.Project;
 // import org.javamodularity.moduleplugin.ModuleSystemPlugin;
 import org.openjfx.gradle.tasks.ExecTask;
+import org.openjfx.gradle.tasks.OmegaCrossBuild;
 import org.openjfx.gradle.tasks.OmegaLocalBuild;
 
 public class JavaFXPlugin implements Plugin<Project> {
@@ -47,6 +48,7 @@ public class JavaFXPlugin implements Plugin<Project> {
 
         project.getExtensions().create("javafx", JavaFXOptions.class, project);
         project.getTasks().create("localBuild", OmegaLocalBuild.class);
+        project.getTasks().create("crossBuild", OmegaCrossBuild.class);
         System.err.println("Applied javafxplugin, tasks = "+project.getAllTasks(true));
         new ExecTask().configure(project);
     }

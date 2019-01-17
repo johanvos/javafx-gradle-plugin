@@ -34,7 +34,7 @@ public class OmegaLocalBuild extends DefaultTask {
             FileCollection classpath = compileTask.getClasspath();
             System.err.println("CLASSPATH = "+classpath.getFiles());
             System.err.println("JAVACP = "+System.getProperty("java.class.path"));
-            Omega.run(mainClassName,name);
+            Omega.localBuild(mainClassName,name);
             // System.err.println(this.getProject().getProperties());
         //    Omega.run("com.gluonhq.svmsample", "testapp");
         } catch (Exception e) {
