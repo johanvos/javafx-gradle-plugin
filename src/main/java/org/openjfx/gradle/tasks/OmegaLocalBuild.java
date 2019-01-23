@@ -66,7 +66,9 @@ public class OmegaLocalBuild extends DefaultTask {
             String jfxsdk = (String)getProject().findProperty("javafxsdk");
             Omega.setJavaFXRoot(jfxsdk);
             String svm = (String)getProject().findProperty("svm");
-            Omega.setJavaFXRoot(svm);
+            Omega.setSVMRoot(svm);
+            System.err.println("In localbuild task, jfxsdk = "+jfxsdk);
+            System.err.println("In localbuild task = "+svm);
             Omega.localBuild(mainClassName,name);
             // System.err.println(this.getProject().getProperties());
         //    Omega.run("com.gluonhq.svmsample", "testapp");
