@@ -62,6 +62,10 @@ public class OmegaCrossBuild extends DefaultTask {
             FileCollection classpath = compileTask.getClasspath();
             System.err.println("CLASSPATH = "+classpath.getFiles());
             System.err.println("JAVACP = "+System.getProperty("java.class.path"));
+            String jfxsdk = (String)getProject().findProperty("javafxsdk");
+            Omega.setJavaFXRoot(jfxsdk);
+            String svm = (String)getProject().findProperty("svm");
+            Omega.setSVMRoot(svm);
             Omega.crossBuild(mainClassName,name);
             // System.err.println(this.getProject().getProperties());
             //    Omega.run("com.gluonhq.svmsample", "testapp");
