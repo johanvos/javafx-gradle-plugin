@@ -34,6 +34,7 @@ import org.gradle.api.Plugin;
 import org.gradle.api.Project;
 import org.javamodularity.moduleplugin.ModuleSystemPlugin;
 import org.openjfx.gradle.tasks.ExecTask;
+import org.openjfx.gradle.tasks.OmegaLocalBuild;
 
 public class JavaFXPlugin implements Plugin<Project> {
 
@@ -43,6 +44,7 @@ public class JavaFXPlugin implements Plugin<Project> {
         project.getPlugins().apply(ModuleSystemPlugin.class);
 
         project.getExtensions().create("javafx", JavaFXOptions.class, project);
+        project.getTasks().create("localBuild", OmegaLocalBuild.class);
 
         new ExecTask().configure(project);
     }
